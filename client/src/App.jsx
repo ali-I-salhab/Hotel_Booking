@@ -3,18 +3,25 @@ import NavBar from "./components/NavBar";
 import { useLocation, Routes, Route } from "react-router-dom";
 import Hero from "./components/Hero";
 import Home from "./pages/Home";
+import Footer from "./components/Footer";
+import AllRooms from "./pages/AllRooms";
+import Test from "./pages/Test";
 
 const App = () => {
   const isOwnerPath = useLocation().pathname.includes("owner");
+  const istest = useLocation().pathname.includes("test");
 
   return (
     <div>
-      {!isOwnerPath && <NavBar />}
+      {!(istest || isOwnerPath) && <NavBar />}
       <div className="min-h-[70vh]">
         <Routes>
           <Route path="/" element={<Home />} key="home" />
+          <Route path="/rooms" element={<AllRooms />} key="home" />
+          <Route path="/test" element={<Test />} key="home" />
         </Routes>
       </div>
+      {!istest && <Footer />}
     </div>
   );
 };

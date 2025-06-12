@@ -30,7 +30,7 @@ const Hero = () => {
             list="destinations"
             id="destinationInput"
             type="text"
-            className=" rounded border border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none"
+            className=" rounded border w-30 border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none"
             placeholder="Type here"
             required
           />
