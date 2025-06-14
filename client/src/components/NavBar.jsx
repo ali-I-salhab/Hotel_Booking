@@ -54,10 +54,10 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0  w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-1000 z-50 ${
+      className={`fixed top-0 left-0  w-full flex  justify-between px-1 md:px-1 lg:px-24 xl:px-3 transition-all duration-1000 z-50 ${
         isScrolled
           ? "bg-blend-multiply shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4"
-          : "py-4 md:py-6"
+          : "py-1 md:py-1"
       }`}
     >
       {/* Logo */}
@@ -65,12 +65,12 @@ const NavBar = () => {
         <img
           src={assets.logo}
           alt="logo"
-          className={`h-9 ${isScrolled && "invert opacity-80"}`}
+          className={`h-9 ${isScrolled && "invert opacity-80"} `}
         />
       </Link>
 
       {/* Desktop Nav */}
-      <div className="hidden md:flex items-center gap-4 lg:gap-8">
+      <div className="hidden md:flex items-center gap-3 lg:gap-8 ">
         {navLinks.map((link, i) => (
           <a
             key={i}
@@ -134,7 +134,7 @@ const NavBar = () => {
       </div>
 
       {/* Mobile Menu Button */}
-      <div className="flex items-center gap-3 md:hidden">
+      <div className="flex items-center gap-3 md:hidden  m-3">
         <img
           onClick={() => setIsMenuOpen(true)}
           src={assets.menuIcon}
@@ -144,13 +144,12 @@ const NavBar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <header></header>
+
       <div
         className={`fixed top-0 left-0 w-full h-screen bg-white text-base flex flex-col md:hidden items-center justify-center gap-6 font-medium text-gray-800 transition-all duration-500 ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        {" "}
         {user && (
           <UserButton>
             <UserButton.MenuItems>

@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import AllRooms from "./pages/AllRooms";
 import Test from "./pages/Test";
-
+import RoomDetails from "./pages/RoomDetails";
 const App = () => {
   const isOwnerPath = useLocation().pathname.includes("owner");
   const istest = useLocation().pathname.includes("test");
@@ -19,6 +19,7 @@ const App = () => {
           <Route path="/" element={<Home />} key="home" />
           <Route path="/rooms" element={<AllRooms />} key="home" />
           <Route path="/test" element={<Test />} key="home" />
+          <Route path="/rooms/:id" element={<RoomDetails />} key="home" />
         </Routes>
       </div>
       {!istest && <Footer />}
