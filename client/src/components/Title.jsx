@@ -5,7 +5,7 @@ const Title = ({ title, subTilte, align, font }) => {
     <div
       className={` ${
         align === "left" && "md:items-start md:text-left"
-      } flex flex-col justify-center text-center`}
+      } flex flex-col justify-center text-center `}
     >
       <h1 className={`text-4xl md:text-[40px]   ${font || "font-playfair"}`}>
         {title}
