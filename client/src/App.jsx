@@ -8,6 +8,7 @@ import AllRooms from "./pages/AllRooms";
 import Test from "./pages/Test";
 import RoomDetails from "./pages/RoomDetails";
 import MyBooking from "./pages/MyBooking";
+import HotelReg from "./components/HotelReg";
 const App = () => {
   const isOwnerPath = useLocation().pathname.includes("owner");
   const istest = useLocation().pathname.includes("test");
@@ -15,6 +16,7 @@ const App = () => {
   return (
     <div>
       {!(istest || isOwnerPath) && <NavBar />}
+      {false && <HotelReg />}
       <div className="min-h-[70vh]">
         <Routes>
           <Route path="/" element={<Home />} key="home" />
