@@ -3,14 +3,18 @@ import "dotenv/config";
 import cors from "cors";
 import mongoose from "mongoose";
 import connectDb from "./config/db.js";
-// cloudinary upload images to cloud storage
-// multer upload image
-// svix make api call http request
+import { clerkMiddleware } from "@clerk/express";
+import clerkWebhooks from "./contollers/clerkWebHooks.js";
 connectDb();
 const app = express();
-// connnect fron to back
 app.use(cors()); //enable cross-origin resource sharing
 
+// middleware
+app.use(express.json());
+app.use(clerkMiddleware());
+
+// api to listen to clerk webhook
+app.use("/api/clerk", clerkWebhooks);
 app.get("/", (req, res) => {
   return res.json({
     message: "ssssssss",
