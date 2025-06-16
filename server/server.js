@@ -28,7 +28,7 @@ app.use("/api/clerk", clerkWebhooks);
 
 app.get("/", (req, res) => {
   return res.json({
-    message: "ssssssss",
+    message: "updated",
     age: 12,
     hotel: { _id: 1, name: "asas" },
   });
